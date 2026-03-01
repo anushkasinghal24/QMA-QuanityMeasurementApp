@@ -35,15 +35,20 @@ public class QuantityLength {
 
     // Convert to another unit
     public QuantityLength convertTo(LengthUnit targetUnit) {
+
         double baseValue = unit.convertToBaseUnit(value);
+
         double convertedValue = targetUnit.convertFromBaseUnit(baseValue);
+
         return new QuantityLength(convertedValue, targetUnit);
     }
 
     // Addition with explicit target unit (UC7 compatible)
     public QuantityLength add(QuantityLength other, LengthUnit targetUnit) {
 
+
         double baseValue1 = this.unit.convertToBaseUnit(this.value);
+
         double baseValue2 = other.unit.convertToBaseUnit(other.value);
 
         double sumBase = baseValue1 + baseValue2;
@@ -57,11 +62,15 @@ public class QuantityLength {
     public boolean equals(Object obj) {
 
         if (this == obj) return true;
+
+
         if (!(obj instanceof QuantityLength)) return false;
+
 
         QuantityLength other = (QuantityLength) obj;
 
         double baseValue1 = this.unit.convertToBaseUnit(this.value);
+
         double baseValue2 = other.unit.convertToBaseUnit(other.value);
 
         return Math.abs(baseValue1 - baseValue2) < EPSILON;
@@ -75,6 +84,7 @@ public class QuantityLength {
 
     @Override
     public String toString() {
+
         return "Quantity(" + value + ", " + unit + ")";
     }
 }

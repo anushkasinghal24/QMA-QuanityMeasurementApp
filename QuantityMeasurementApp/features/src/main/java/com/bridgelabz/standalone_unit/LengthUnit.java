@@ -5,6 +5,7 @@ package com.bridgelabz.standalone_unit;
 public enum LengthUnit {
 
     FEET(1.0),
+
     INCHES(1.0 / 12.0),
     YARDS(3.0),
     CENTIMETERS(1.0 / 30.48);
@@ -15,15 +16,21 @@ public enum LengthUnit {
         this.conversionFactorToFeet = conversionFactorToFeet;
     }
 
+
+
     public double getConversionFactor() {
         return conversionFactorToFeet;
+
     }
 
+
     public double convertToBaseUnit(double value) {
+
         return value * conversionFactorToFeet;
     }
 
     public double convertFromBaseUnit(double baseValue) {
+
         return baseValue / conversionFactorToFeet;
     }
 }
