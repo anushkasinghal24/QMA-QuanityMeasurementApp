@@ -61,5 +61,22 @@ public class QuantityMeasurementApp {
         demonstrateEquality(v1, v2);
         demonstrateConversion(v1, VolumeUnit.MILLILITRE);
         demonstrateAddition(v1, v2, VolumeUnit.LITRE);
+
+
+
+            Quantity<LengthUnit> length1 =
+                    new Quantity<>(10.0, LengthUnit.FEET);
+
+            Quantity<LengthUnit> length2 =
+                    new Quantity<>(6.0, LengthUnit.INCHES);
+
+            System.out.println("Subtraction: " +
+                    length1.subtract(length2));
+
+            System.out.println("Division: " +
+                    length1.divide(new Quantity<>(2.0, LengthUnit.FEET)));
+
+
     }
+
 }
