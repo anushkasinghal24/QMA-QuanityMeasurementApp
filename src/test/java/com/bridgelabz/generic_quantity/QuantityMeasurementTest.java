@@ -1,5 +1,6 @@
 package com.bridgelabz.generic_quantity;
 
+import com.bridgelabz.unit.generic_quantity.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +9,8 @@ class QuantityMeasurementTest {
     @Test
 
 
-    void shouldConsider1FootEqualTo12Inches() {Quantity<LengthUnit> foot = new Quantity<>(1.0, LengthUnit.FEET);
+    void shouldConsider1FootEqualTo12Inches() {
+        Quantity<LengthUnit> foot = new Quantity<>(1.0, LengthUnit.FEET);
 
         Quantity<LengthUnit> inches = new Quantity<>(12.0, LengthUnit.INCHES);
         assertEquals(foot, inches);

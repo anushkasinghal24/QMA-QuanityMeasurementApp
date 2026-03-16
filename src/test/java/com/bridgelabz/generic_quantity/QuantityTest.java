@@ -201,13 +201,11 @@ package com.bridgelabz.generic_quantity;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.bridgelabz.generic_quantity.IMeasurable;
-import com.bridgelabz.generic_quantity.LengthUnit;
-import com.bridgelabz.generic_quantity.WeightUnit;
-import com.bridgelabz.generic_quantity.Quantity;
-import com.bridgelabz.generic_quantity.VolumeUnit;
-
-import com.bridgelabz.generic_quantity.*;
+import com.bridgelabz.unit.generic_quantity.IMeasurable;
+import com.bridgelabz.unit.generic_quantity.LengthUnit;
+import com.bridgelabz.unit.generic_quantity.WeightUnit;
+import com.bridgelabz.unit.generic_quantity.Quantity;
+import com.bridgelabz.unit.generic_quantity.VolumeUnit;
 
 class GenericQuantityTest {
 

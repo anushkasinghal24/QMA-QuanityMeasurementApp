@@ -3,68 +3,127 @@ package com.bridgelabz.service;
 import com.bridgelabz.entity.QuantityMeasurementEntity;
 import com.bridgelabz.dto.QuantityDTO;
 import com.bridgelabz.repository.IQuantityMeasurementRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.bridgelabz.exception.QuantityMeasurementException;
+import com.bridgelabz.unit.generic_quantity.IMeasurable;
+import com.bridgelabz.repository.IQuantityMeasurementRepository;
 
 import java.util.List;
 
 public class QuantityMeasurementServiceImpl implements IQuantityMeasurementService {
 
-    private static final Logger logger = LoggerFactory.getLogger(QuantityMeasurementServiceImpl.class);
-    private final IQuantityMeasurementRepository repository;
+    private IQuantityMeasurementRepository repository;
 
     public QuantityMeasurementServiceImpl(IQuantityMeasurementRepository repository) {
         this.repository = repository;
-        logger.info("Service initialized with repository: {}", repository.getClass().getSimpleName());
     }
 
-    public void saveMeasurement(QuantityMeasurementEntity entity) {
+    @Override
+    public QuantityDTO convert(QuantityDTO input, String targetUnit) {
+        return null;
+    }
+
+//    @Override
+//    public boolean compare(QuantityDTO q1, QuantityDTO q2) {
+//
+//        if(!q1.getUnit().equals(q2.getUnit()))
+//            throw new QuantityMeasurementException("Units mismatch");
+//
+//        boolean result = q1.getValue() == q2.getValue();
+//
+//        repository.save(
+//                new QuantityMeasurementEntity(
+//                        q1.getValue(),
+//                        q2.getValue(),
+//                        "COMPARE",
+//                        result ? 1 : 0
+//                )
+//        );
+//
+//        return result;
+//    }
+
+//    @Override
+//    public boolean compare(QuantityDTO q1, QuantityDTO q2) {
+//
+//        IMeasurable unit1 = IMeasurable.getUnitByName(q1.getUnit());
+//        IMeasurable unit2 = IMeasurable.getUnitByName(q2.getUnit());
+//
+//        if (!unit1.getMeasurementType().equals(unit2.getMeasurementType())) {
+//            throw new QuantityMeasurementException("Units mismatch");
+//        }
+//
+//        double base1 = unit1.convertToBaseUnit(q1.getValue());
+//        double base2 = unit2.convertToBaseUnit(q2.getValue());
+//
+//        boolean result = Double.compare(base1, base2) == 0;
+//
+//        // SAVE TO DATABASE
+//        QuantityMeasurementEntity entity = new QuantityMeasurementEntity();
+//
+//        entity.setOperation("COMPARE");
+//        entity.setMeasurementType(q1.getUnit());
+//        entity.setValue1(q1.getValue());
+//        entity.setValue2(q2.getValue());
+//        entity.setResult(result);
+//
+//        repository.save(entity);
+//
+//        return result;
+//    }
+
+    @Override
+    public boolean compare(QuantityDTO q1, QuantityDTO q2) {
+
+        IMeasurable unit1 = IMeasurable.getUnitByName(q1.getUnit());
+        IMeasurable unit2 = IMeasurable.getUnitByName(q2.getUnit());
+
+        if (!unit1.getMeasurementType().equals(unit2.getMeasurementType())) {
+            throw new QuantityMeasurementException("Units mismatch");
+        }
+
+        double base1 = unit1.convertToBaseUnit(q1.getValue());
+        double base2 = unit2.convertToBaseUnit(q2.getValue());
+
+        boolean result = Double.compare(base1, base2) == 0;
+
+        QuantityMeasurementEntity entity = new QuantityMeasurementEntity();
+        entity.setOperation("COMPARE");
+        entity.setMeasurementType(q1.getUnit());
+        entity.setValue1(q1.getValue());
+        entity.setValue2(q2.getValue());
+        entity.setResult(result);
+
         repository.save(entity);
-        logger.info("Saved measurement: {}", entity);
-    }
 
-    public List<QuantityMeasurementEntity> getAllMeasurements() {
-        return repository.findAll();
-    }
-
-    public void deleteAllMeasurements() {
-        repository.deleteAll();
-        logger.info("All measurements deleted.");
-    }
-
-    @Override
-    public double convert(QuantityDTO dto, String targetUnit) {
-        double factor = 1.0; // TODO: Proper conversion logic
-        logger.info("Converting {} {} to {}", dto.getValue(), dto.getUnit(), targetUnit);
-        return dto.getValue() * factor;
-    }
-
-    @Override
-    public boolean compare(QuantityDTO dto1, QuantityDTO dto2) {
-        logger.info("Comparing {} {} with {} {}", dto1.getValue(), dto1.getUnit(),
-                dto2.getValue(), dto2.getUnit());
-        // TODO: Proper comparison with unit conversion
-        return dto1.getValue() == dto2.getValue();
+        return result;
     }
 
     @Override
     public QuantityDTO add(QuantityDTO q1, QuantityDTO q2) {
-        logger.info("Adding {} {} + {} {}", q1.getValue(), q1.getUnit(), q2.getValue(), q2.getUnit());
+
         double result = q1.getValue() + q2.getValue();
+
+        QuantityMeasurementEntity entity = new QuantityMeasurementEntity();
+
+        entity.setOperation("ADD");
+        entity.setMeasurementType(q1.getUnit());
+        entity.setValue1(q1.getValue());
+        entity.setValue2(q2.getValue());
+        entity.setResult(true);
+
+        repository.save(entity);
+
         return new QuantityDTO(result, q1.getUnit());
     }
 
     @Override
     public QuantityDTO subtract(QuantityDTO q1, QuantityDTO q2) {
-        logger.info("Subtracting {} {} - {} {}", q1.getValue(), q1.getUnit(), q2.getValue(), q2.getUnit());
-        double result = q1.getValue() - q2.getValue();
-        return new QuantityDTO(result, q1.getUnit());
+        return null;
     }
 
     @Override
     public double divide(QuantityDTO q1, QuantityDTO q2) {
-        logger.info("Dividing {} {} / {} {}", q1.getValue(), q1.getUnit(), q2.getValue(), q2.getUnit());
-        if (q2.getValue() == 0) throw new IllegalArgumentException("Cannot divide by zero");
-        return q1.getValue() / q2.getValue();
+        return 0;
     }
+
 }

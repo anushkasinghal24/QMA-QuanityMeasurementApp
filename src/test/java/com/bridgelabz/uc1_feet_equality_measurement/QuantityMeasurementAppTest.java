@@ -1,6 +1,7 @@
 package com.bridgelabz.uc1_feet_equality_measurement;
 
 
+import com.bridgelabz.unit.uc1_feet_equality_measurement.QuantityMeasurementApp;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class QuantityMeasurementAppTest {

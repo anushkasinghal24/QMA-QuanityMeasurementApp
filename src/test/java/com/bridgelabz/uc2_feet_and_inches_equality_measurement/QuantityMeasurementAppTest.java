@@ -1,5 +1,8 @@
 package com.bridgelabz.uc2_feet_and_inches_equality_measurement;
 
+import com.bridgelabz.unit.uc2_feet_and_inches_equality_measurement.Feet;
+import com.bridgelabz.unit.uc2_feet_and_inches_equality_measurement.Inches;
+import com.bridgelabz.unit.uc2_feet_and_inches_equality_measurement.QuantityMeasurementApp;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

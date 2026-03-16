@@ -1,6 +1,6 @@
 package com.bridgelabz.generic_quantity;
 
-import com.bridgelabz.generic_quantity.LengthUnit;
+import com.bridgelabz.unit.generic_quantity.LengthUnit;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 class LengthUnitTest {

@@ -1,6 +1,9 @@
 package com.bridgelabz.generic_quantity;
 
 
+import com.bridgelabz.unit.generic_quantity.LengthUnit;
+import com.bridgelabz.unit.generic_quantity.Quantity;
+import com.bridgelabz.unit.generic_quantity.WeightUnit;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

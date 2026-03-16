@@ -1,6 +1,6 @@
 package com.bridgelabz.model;
 
-import com.bridgelabz.generic_quantity.IMeasurable;
+import com.bridgelabz.unit.generic_quantity.IMeasurable;
 public class QuantityModel<U extends IMeasurable> {
 
     private double value;

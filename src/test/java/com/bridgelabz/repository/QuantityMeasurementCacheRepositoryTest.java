@@ -1,23 +1,39 @@
 package com.bridgelabz.repository;
 
+import com.bridgelabz.controller.QuantityMeasurementController;
 import com.bridgelabz.entity.QuantityMeasurementEntity;
+
+
+import com.bridgelabz.dto.QuantityDTO;
+import com.bridgelabz.repository.QuantityMeasurementCacheRepository;
+import com.bridgelabz.service.IQuantityMeasurementService;
+import com.bridgelabz.service.QuantityMeasurementServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuantityMeasurementCacheRepositoryTest {
+class QuantityMeasurementControllerTest {
+
+    private QuantityMeasurementController controller;
+
+    @BeforeEach
+    void setup() {
+        IQuantityMeasurementService service =
+                new QuantityMeasurementServiceImpl(
+                        QuantityMeasurementCacheRepository.getInstance());
+
+        controller = new QuantityMeasurementController(service);
+    }
 
     @Test
-    void givenEntity_WhenSaved_ShouldStoreInRepository() {
+    void givenTwoQuantities_WhenCompared_ShouldReturnTrue() {
 
-        QuantityMeasurementCacheRepository repo =
-                QuantityMeasurementCacheRepository.getInstance();
+        QuantityDTO q1 = new QuantityDTO(10,"FEET");
+        QuantityDTO q2 = new QuantityDTO(120,"INCHES");
 
-        QuantityMeasurementEntity entity =
-                new QuantityMeasurementEntity(10,20,"ADD",30);
+        boolean result = controller.performComparison(q1,q2);
 
-        repo.save(entity);
-
-        assertFalse(repo.findAll().isEmpty());
+        assertTrue(result);
     }
 }
