@@ -36,6 +36,15 @@ public class AuthController {
 //        }
 //    }
 
+
+    @GetMapping("/google-success")
+    public String googleLoginSuccess(Authentication authentication) {
+
+        String username = authentication.getName();
+
+        return jwtUtil.generateToken(username); // jwt return
+    }
+
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password) {
@@ -46,7 +55,7 @@ public class AuthController {
             );
 
             if (authentication.isAuthenticated()) {
-                return jwtUtil.generateToken(username); // 👈 token return
+                return jwtUtil.generateToken(username); // token return
             } else {
                 return "Login Failed";
             }
