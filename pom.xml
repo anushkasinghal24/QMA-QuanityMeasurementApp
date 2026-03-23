@@ -63,6 +63,19 @@
 			<version>0.11.5</version>
 		</dependency>
 
+		<!-- 🔐 Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- 🔑 OAuth2 (Google Login) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-client</artifactId>
+		</dependency>
+
+
 		<!-- ✅ DB -->
 		<dependency>
 			<groupId>com.mysql</groupId>

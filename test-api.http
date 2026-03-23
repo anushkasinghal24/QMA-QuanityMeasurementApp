@@ -1,7 +1,10 @@
 
+### LOGIN API
+POST http://localhost:8080/api/auth/login?username=admin&password=1234
 
 ### 🔹 BASE CHECK
 GET http://localhost:8080/api/quantity/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NDI0NTIyOSwiZXhwIjoxNzc0MjQ4ODI5fQ._mlEPv8fmwXRKBztmcW_z5dKbORj4ZxkFOIu_-c7KpE
 
 ###
 
