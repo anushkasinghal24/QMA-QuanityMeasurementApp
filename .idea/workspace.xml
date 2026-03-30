@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="181dec9f-8cd2-4e68-9ec5-29f4d37ce9cc" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3AvPwXYPAWrdC4OR7g96oZ25BYX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.QuantityMeasurementApp.executor": "Run",
+    "HTTP Request.All in test-api.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.test-api | #1.executor": "Run",
+    "HTTP Request.test-api | #2.executor": "Run",
+    "HTTP Request.test-api | #3.executor": "Run",
+    "HTTP Request.test-api | #4.executor": "Run",
+    "HTTP Request.test-api | #5.executor": "Run",
+    "HTTP Request.test-api | #6.executor": "Run",
+    "HTTP Request.test-api | #7.executor": "Run",
+    "HTTP Request.test-api | #8.executor": "Run",
+    "HTTP Request.test-api | #9.executor": "Run",
+    "HTTP Request.test-api | LOGIN API.executor": "Run",
+    "HTTP Request.test-api | 🔹 BASE CHECK.executor": "Run",
+    "JUnit.ApplicationTests.executor": "Run",
+    "JUnit.GenericQuantityTest.executor": "Run",
+    "JUnit.LengthUnitTest.executor": "Run",
+    "JUnit.QuantityArithmeticTest.executor": "Run",
+    "JUnit.QuantityLengthTest.executor": "Run",
+    "JUnit.QuantityMeasurementAppTest.executor": "Run",
+    "JUnit.QuantityMeasurementControllerTest.executor": "Run",
+    "JUnit.QuantityMeasurementServiceImplTest.executor": "Run",
+    "JUnit.QuantityMeasurementTest.executor": "Run",
+    "JUnit.QuantityModelTest.executor": "Run",
+    "JUnit.QuantityTestRefactor.executor": "Run",
+    "JUnit.StandaloneUnitTest.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.App.executor": "Run",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "feature/UC18-Oauth-Authentication",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-api | 🔹 BASE CHECK" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test-api.http" executionIdentifier="🔹 BASE CHECK" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-api | LOGIN API" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test-api.http" executionIdentifier="LOGIN API" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-api | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test-api.http" executionIdentifier="#3" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-api | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test-api.http" executionIdentifier="#4" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="feature-uc1-feet-equality-measurement-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bridgelabz.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.test-api | 🔹 BASE CHECK" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.test-api | #4" />
+        <item itemvalue="HTTP Request.test-api | LOGIN API" />
+        <item itemvalue="HTTP Request.test-api | #3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="181dec9f-8cd2-4e68-9ec5-29f4d37ce9cc" name="Changes" comment="" />
+      <created>1773470313350</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773470313350</updated>
+      <workItem from="1773470316479" duration="3257000" />
+      <workItem from="1773640377018" duration="2619000" />
+      <workItem from="1773724367739" duration="587000" />
+      <workItem from="1773896827028" duration="630000" />
+      <workItem from="1773897486505" duration="4079000" />
+      <workItem from="1773914056042" duration="500000" />
+      <workItem from="1773916460051" duration="1861000" />
+      <workItem from="1773984871453" duration="2082000" />
+      <workItem from="1773994845384" duration="1161000" />
+      <workItem from="1774098570757" duration="979000" />
+      <workItem from="1774118709207" duration="786000" />
+      <workItem from="1774242412418" duration="9554000" />
+      <workItem from="1774330090374" duration="56000" />
+      <workItem from="1774330197727" duration="107000" />
+      <workItem from="1774330386117" duration="74000" />
+      <workItem from="1774330521790" duration="10000" />
+      <workItem from="1774330677694" duration="612000" />
+      <workItem from="1774333165437" duration="811000" />
+      <workItem from="1774334035430" duration="5996000" />
+      <workItem from="1774364879656" duration="3016000" />
+      <workItem from="1774413558198" duration="1279000" />
+      <workItem from="1774415027633" duration="1834000" />
+      <workItem from="1774422785697" duration="683000" />
+      <workItem from="1774431456703" duration="1676000" />
+      <workItem from="1774433168860" duration="4852000" />
+      <workItem from="1774502317284" duration="3116000" />
+      <workItem from="1774517055685" duration="600000" />
+      <workItem from="1774691569967" duration="6000" />
+      <workItem from="1774691635335" duration="1273000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
