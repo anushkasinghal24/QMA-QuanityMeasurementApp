@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
   // ✅ Correct annotation
+  @EnableFeignClients
 @SpringBootApplication
 public class QuantityServiceApplication {
 

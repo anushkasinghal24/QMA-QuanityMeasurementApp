@@ -12,4 +12,8 @@ public class QuantityService {
     public String addQuantity(String quantity) {
         return "Quantity added from Service: " + quantity;
     }
+
+    public double feetToInch(double value) {
+        return value * 12;
+    }
 }

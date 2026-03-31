@@ -25,4 +25,9 @@ public class QuantityController {
     public String addQuantity(@RequestBody String quantity) {
         return quantityService.addQuantity(quantity);
     }
+
+    @GetMapping("/convert/feet-to-inch")
+    public double feetToInch(@RequestParam double value) {
+        return quantityService.feetToInch(value);
+    }
 }
