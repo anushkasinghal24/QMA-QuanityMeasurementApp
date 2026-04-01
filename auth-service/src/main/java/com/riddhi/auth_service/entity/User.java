@@ -1,8 +1,7 @@
 package com.riddhi.auth_service.entity;
 
 import jakarta.persistence.*;
-import lombok
-        .Data;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 

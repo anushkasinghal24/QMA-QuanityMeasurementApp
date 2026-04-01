@@ -67,7 +67,8 @@
 #}
 
 GET http://localhost:8080/api/quantity/all
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NDk1MTY0NSwiZXhwIjoxNzc0OTU1MjQ1fQ.QiMpQt0ycnfqYvnm8Bf57gxpTIS8ZU2UFd8o1AE3Xz0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NDk3NzYyNywiZXhwIjoxNzc0OTgxMjI3fQ.Aa2Wp2GsvozWvDDVtfK-0OYSf5lUQrk3x95GtW-kvas
+
 
 #GET http://localhost:8080/api/quantity/1
 

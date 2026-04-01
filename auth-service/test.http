@@ -1,1 +1,16 @@
-POST http://localhost:8082/api/auth/login?username=admin&password=admin
+#POST http://localhost:8082/api/auth/login?username=admin&password=admin
+
+#POST http://localhost:8082/api/auth/signup
+#Content-Type: application/json
+#
+#{
+#  "username": "test2",
+#  "password": "test123",
+#  "role": "USER"
+#}
+
+POST http://localhost:8082/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NDk3ODYyNCwiZXhwIjoxNzc0OTgyMjI0fQ.O0iI1bPnRA37PAOhWPB4HAGbxGpQHnRUaN_NRcJojlc
+
+#GET http://localhost:8082/api/auth/profile
+#Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NDk3ODU0MSwiZXhwIjoxNzc0OTgyMTQxfQ.kVJn0EbeB7c6ugoTIVZc3zmDrb97vUKKW0lRYsg4orI

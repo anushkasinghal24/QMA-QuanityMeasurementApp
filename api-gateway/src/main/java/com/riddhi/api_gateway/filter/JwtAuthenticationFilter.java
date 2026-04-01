@@ -22,28 +22,39 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
 
         String path = exchange.getRequest().getURI().getPath();
 
-        // 🔓 Allow public endpoints (Auth APIs)
+        // 🔓 Allow public endpoints
         if (path.startsWith("/api/auth")) {
             return chain.filter(exchange);
         }
 
-        // 🔐 Check Authorization header
-        if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
-            return unauthorized(exchange);
-        }
-
+        // 🔐 Get Authorization header
         String authHeader = exchange.getRequest()
                 .getHeaders()
                 .getFirst(HttpHeaders.AUTHORIZATION);
 
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        // 🔍 DEBUG (VERY IMPORTANT)
+        System.out.println("AUTH HEADER: " + authHeader);
+
+        // ❌ If header missing
+        if (authHeader == null || authHeader.isEmpty()) {
             return unauthorized(exchange);
         }
 
+        // ❌ If not Bearer token
+        if (!authHeader.startsWith("Bearer ")) {
+            return unauthorized(exchange);
+        }
+
+        // Extract token
         String token = authHeader.substring(7);
 
-        // ❌ Validate token
-        if (!jwtUtil.validateToken(token)) {
+        try {
+            // ❌ Validate token
+            if (!jwtUtil.validateToken(token)) {
+                return unauthorized(exchange);
+            }
+        } catch (Exception e) {
+            System.out.println("JWT ERROR: " + e.getMessage());
             return unauthorized(exchange);
         }
 

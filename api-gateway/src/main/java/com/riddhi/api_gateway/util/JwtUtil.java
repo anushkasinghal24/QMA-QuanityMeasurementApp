@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtUtil {
 
-    private final String SECRET = "mysecretkey";
+    private final String SECRET = "myveryveryverylongsecretkey123456789";
 
     // ✅ Validate Token
     public boolean validateToken(String token) {

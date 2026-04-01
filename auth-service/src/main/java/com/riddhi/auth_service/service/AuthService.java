@@ -4,8 +4,10 @@ import com.riddhi.auth_service.entity.User;
 import com.riddhi.auth_service.repository.UserRepository;
 import com.riddhi.auth_service.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class AuthService {
@@ -22,12 +24,18 @@ public class AuthService {
     public String login(String username, String password) {
 
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
 
+        // 🔥 IMPORTANT FIX
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException("Invalid password");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid password");
         }
 
         return jwtUtil.generateToken(user.getUsername(), user.getRole());
+    }
+
+    public void logout(String token) {
+        // TODO: store token in blacklist (Redis later)
+        System.out.println("Logout successful, token: " + token);
     }
 }
