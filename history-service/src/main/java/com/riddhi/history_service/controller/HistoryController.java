@@ -18,7 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/history")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000", "http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000", "http://localhost:8080","https://quantity-measurement-app-frontend-puce.vercel.app"})
 @Tag(name = "History", description = "Conversion & operation history for authenticated users")
 public class HistoryController {
 
