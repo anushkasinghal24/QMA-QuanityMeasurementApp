@@ -76,46 +76,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.io.IOException;
 import java.util.Collections;
 
-//@Component
-//public class JwtFilter extends OncePerRequestFilter {
-//
-//    @Autowired
-//    private JwtService jwtService;
-//
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request,
-//                                    HttpServletResponse response,
-//                                    FilterChain filterChain)
-//            throws ServletException, IOException {
-//
-//        String authHeader = request.getHeader("Authorization");
-//
-//        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-//
-//            String token = authHeader.substring(7);
-//
-//            try {
-//                String email = jwtService.extractUsername(token);
-//
-//                if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-//
-//                    if (jwtService.validateToken(token, email)) {
-//
-//                        UsernamePasswordAuthenticationToken authentication =
-//                                new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
-//
-//                        SecurityContextHolder.getContext().setAuthentication(authentication);
-//                    }
-//                }
-//
-//            } catch (Exception e) {
-//                System.out.println("JWT error: " + e.getMessage());
-//            }
-//        }
-//
-//        filterChain.doFilter(request, response);
-//    }
-//}
+
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
