@@ -1,0 +1,80 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            # Allow all origins — covers Vercel, Railway, localhost
+            allowedOriginPatterns: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - PATCH
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
+
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+
+        # OAuth2 routes — forward to auth-service so Google OAuth works through gateway too
+        - id: auth-oauth2
+          uri: lb://auth-service
+          predicates:
+            - Path=/oauth2/**
+
+        - id: auth-login-oauth2
+          uri: lb://auth-service
+          predicates:
+            - Path=/login/oauth2/**
+
+        - id: quantity-service
+          uri: lb://quantity-service
+          predicates:
+            - Path=/api/quantity/**
+
+        - id: history-service
+          uri: lb://history-service
+          predicates:
+            - Path=/api/history/**
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+    hostname: ${RAILWAY_PRIVATE_DOMAIN:localhost}
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+
+# Actuator for health checks (Railway uses this)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
