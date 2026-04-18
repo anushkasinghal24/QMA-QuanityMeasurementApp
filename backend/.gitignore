@@ -1,0 +1,83 @@
+############################
+#  ENV & SECRETS
+############################
+.env
+.env.*
+*.env
+.env.local
+.env.dev
+.env.prod
+
+############################
+#  Application Config (optional ignore if needed)
+############################
+# Agar tum sensitive config yaha rakh rahi ho toh uncomment karo
+# application.properties
+# application.yml
+
+############################
+#  Java / Spring Boot
+############################
+/target/
+*.log
+*.class
+
+############################
+#  Maven
+############################
+.mvn/wrapper/maven-wrapper.jar
+target/
+
+############################
+#  IDE Files
+############################
+.idea/
+*.iml
+*.iws
+*.ipr
+
+############################
+#  VS Code
+############################
+.vscode/
+
+############################
+#  OS Files
+############################
+.DS_Store
+Thumbs.db
+
+############################
+#  Logs
+############################
+logs/
+*.log
+
+############################
+#  Build Files
+############################
+*.jar
+*.war
+*.ear
+
+############################
+#  Docker (if used)
+############################
+docker-compose.override.yml
+
+############################
+#  Keystore / Certificates
+############################
+*.jks
+*.p12
+*.pem
+*.key
+
+############################
+#  Coverage / Reports
+############################
+coverage/
+
+
+.idea/*.iml
+*.iws
